@@ -1,0 +1,14 @@
+<div class="heading">
+  <h1 class="title">What are you feeling?</h1>
+  <p class="hint" data-heading-hint>
+    Need to vent? Tell the world how you're feeling.
+  </p>
+  <div data-feeling-form>
+    <%= render 'form', feeling: @feeling %>
+  </div>
+</div>
+
+<div data-feelings class="feelings">
+  <%= render partial: 'feeling', collection: @feelings, cached: true %>
+  <%= paginate @feelings %>
+</div>

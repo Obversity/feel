@@ -1,0 +1,8 @@
+<% cache feeling do %>
+  <div class="card">
+    <%= simple_format feeling.content %>
+    <p class="hint feeling-date">
+      <%= feeling.created_at %>
+    </p>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+var formContainer     = document.querySelector("[data-feeling-form]");
+var feelingsContainer = document.querySelector("[data-feelings]");
+
+
+<% if @feeling.invalid? %>
+  formContainer.innerHTML = "<%= escape_javascript render('form', feeling: @feeling) %>";
+<% else %>
+  formContainer.innerHTML = "<%= escape_javascript render('form', feeling: Feeling.new) %>";
+  feelingsContainer.insertAdjacentHTML("afterbegin", "<%= escape_javascript render('feeling', feeling: @feeling) %>");
+<% end %>
+
+focusFeelingInput();
+bindFeelingEvents();

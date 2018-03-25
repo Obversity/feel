@@ -1,0 +1,15 @@
+<%= form_for feeling, remote: true do |f| %>
+  <div contenteditable="true" data-feeling-input autofocus=true>
+    <%= feeling.content %>
+  </div>
+  <div class="hidden">
+    <%= f.text_area :content, hidden: true %>
+  </div>
+  <% if feeling.errors.any? %>
+    <div class="errors">
+      <%= feeling.errors.full_messages.join("; ") %>
+    </div>
+  <% end %>
+  <%= f.button "Let it all out", class: "feeling-submit" %>
+  <p class="hint submit-hint">Or press ctrl+enter to submit</p>
+<% end %>
