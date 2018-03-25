@@ -25,14 +25,13 @@ function isCtrlEnter(event) {
 }
 
 function bindFeelingEvents(){
-  let feelingInput = document.querySelector("[data-feeling-input]")
+  var feelingInput = document.querySelector("[data-feeling-input]");
 
-  let handleFeelingKeyup = function(event){
-    var editableInput = event.srcElement;
-    var form          = editableInput.closest('form');
+  var handleFeelingKeyup = function(event){
+    var form          = feelingInput.closest('form');
     var hiddenInput   = document.querySelector("#feeling_content");
     // set value of hidden input
-    hiddenInput.value = editableInput.innerText;
+    hiddenInput.value = feelingInput.innerText;
     // submit form if shift+enter
     if(isCtrlEnter(event)){
       event.preventDefault();
@@ -41,7 +40,7 @@ function bindFeelingEvents(){
     }
   }
 
-  let handleFeelingKeydown = function(event){
+  var handleFeelingKeydown = function(event){
     if(isCtrlEnter(event)) event.preventDefault();
   }
 
@@ -58,8 +57,8 @@ function startCyclingHeadingHints() {
     "Catharsis is an important part of stress relief.",
     "No one to talk to about your feelings? Tell the internet instead.",
   ]
-  let randomHint = () => hints[Math.floor(Math.random()*hints.length)]
-  let setNewHint = () => hintElement.innerText = randomHint();
+  var randomHint = function(){ return hints[Math.floor(Math.random()*hints.length)]; }
+  var setNewHint = function(){ return hintElement.innerText = randomHint(); }
   setInterval(setNewHint, 7000)
 }
 
