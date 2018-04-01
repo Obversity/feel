@@ -13,3 +13,4 @@ production:
   database: feel_production
   pool: 25
   username: deploy
+  password: password

@@ -56,7 +56,7 @@ task :deploy do
     invoke :'deploy:cleanup'
 
     on :launch do
-      invoke :'puma:phased_restart'
+      command 'touch tmp/restart.txt'
     end
   end
 
