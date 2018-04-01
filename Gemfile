@@ -26,7 +26,8 @@ gem 'bootsnap', github: 'ojab/bootsnap', require: false
 gem 'kaminari'
 
 group :development, :test do
-  gem 'mina'
+  gem 'mina', require: false
+  gem 'mina-puma', require: false,  github: 'untitledkingdom/mina-puma'
   gem 'pry-rails'
 end
 

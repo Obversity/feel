@@ -5,3 +5,11 @@ development:
  database: feel_development
  host: localhost
  username: deploy
+
+production:
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  database: feel_production
+  pool: 25
+  username: deploy
