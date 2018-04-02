@@ -57,4 +57,4 @@ prune_bundler
 # # preload_app!
 #
 # # Allow puma to be restarted by `rails restart` command.
-# plugin :tmp_restart
+plugin :tmp_restart
