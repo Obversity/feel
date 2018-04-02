@@ -55,7 +55,16 @@ task :deploy do
     invoke :'deploy:cleanup'
 
     on :launch do
-      command 'bundle exec rails restart'
+      invoke :restart
+    end
+  end
+end
+
+task :restart do
+  to :launch do
+    in_path(fetch(:current_path)) do
+      echo    "Restarting rails server"
+      command %{bundle exec rails restart}
     end
   end
 end
