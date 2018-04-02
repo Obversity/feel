@@ -54,18 +54,14 @@ task :deploy do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
-    on :launch do
       invoke :restart
-    end
   end
 end
 
 task :restart do
-  to :launch do
-    in_path(fetch(:current_path)) do
-      echo    "Restarting rails server"
-      command %{bundle exec rails restart}
-    end
+  in_path(fetch(:current_path)) do
+    echo    "Restarting rails server"
+    command %{bundle exec rails restart}
   end
 end
 
