@@ -55,7 +55,8 @@ function startCyclingHeadingHints() {
     "Let it all out. It's healthy, I promise.",
     "No need to bottle everything up.",
     "Catharsis is an important part of stress relief.",
-    "No one to talk to about your feelings? Tell the internet instead.",
+    "No one to talk to about your feelings? Confess to the internet instead.",
+    
   ]
   var randomHint = function(){ return hints[Math.floor(Math.random()*hints.length)]; }
   var setNewHint = function(){ return hintElement.innerText = randomHint(); }
