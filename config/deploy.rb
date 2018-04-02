@@ -23,7 +23,6 @@ set :forward_agent, true     # SSH forward_agent.
 # Some plugins already add folders to shared_dirs like `mina/rails` add `public/assets`, `vendor/bundle` and many more
 # run `mina -d` to see all folders and files already included in `shared_dirs` and `shared_files`
 set :shared_dirs, fetch(:shared_dirs, []).push('log', 'tmp/pids', 'tmp/sockets', 'public/uploads')
-set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/credentials.yml.enc', 'config/puma.rb')
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
@@ -59,9 +58,6 @@ task :deploy do
       command 'touch tmp/restart.txt'
     end
   end
-
-  # you can use `run :local` to run tasks on local machine before of after the deploy scripts
-  run(:local){ say 'done' }
 end
 
 # For help in making your deploy script, see the Mina documentation:
