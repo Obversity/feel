@@ -55,7 +55,7 @@ task :deploy do
     invoke :'deploy:cleanup'
 
     on :launch do
-      command 'touch tmp/restart.txt'
+      command 'bundle exec rails restart'
     end
   end
 end
