@@ -60,7 +60,7 @@ end
 
 task :restart do
   in_path(fetch(:current_path)) do
-    echo    "Restarting rails server"
+    command "echo 'Restarting rails server'"
     command %{bundle exec rails restart}
   end
 end
