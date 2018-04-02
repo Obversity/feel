@@ -54,7 +54,9 @@ task :deploy do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
+    on :launch do
       invoke :restart
+    end
   end
 end
 
