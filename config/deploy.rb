@@ -63,7 +63,7 @@ end
 task :restart do
   in_path(fetch(:current_path)) do
     command "echo 'Restarting rails server'"
-    command %{bundle exec rails restart}
+    command %{bundle exec pumactl phased-restart}
   end
 end
 
