@@ -1,3 +1,3 @@
 class Feeling < ApplicationRecord
-  validates :content, length: { maximum: 300, minimum: 20 }
+  validates :content, length: { maximum: 1000, minimum: 3 }
 end
